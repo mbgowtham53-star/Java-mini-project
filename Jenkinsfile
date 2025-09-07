@@ -9,11 +9,13 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
+                dir('sample-app') {
                 git branch: 'main',
                     url: 'https://github.com/mbgowtham53-star/Java-mini-project.git'
 
             }
         }
+       }
 
         stage('Build') {
             steps {
