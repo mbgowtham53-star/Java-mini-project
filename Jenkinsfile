@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main',
+                git branch: 'jenkinspv1',
                     url: 'https://github.com/mbgowtham53-star/Java-mini-project.git'
             }
         }
