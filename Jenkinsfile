@@ -7,11 +7,19 @@ pipeline {
     }
 
     stages {
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/mbgowtham53-star/Java-mini-project.git'
+            }
+        }
         stage('Build') {
             steps {
+                dir('sample-app') {
                 sh 'mvn clean package -DskipTests'
             }
         }
+       }
 
         stage('Deploy to Tomcat') {   // ✅ Fixed name + spelling
             steps {
